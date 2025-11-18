@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mudra-332c9f8c.zappy5.app/sitemap.xml

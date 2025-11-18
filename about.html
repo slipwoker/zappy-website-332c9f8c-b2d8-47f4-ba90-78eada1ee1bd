@@ -1,0 +1,518 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הסיפור שלנו בעולם ה-Mudra — Mudra</title>
+  <meta name="description" content="גלה את הסיפור מאחורי Mudra - איך שילבנו חוכמה עתיקה של mudras for healing עם טכנולוגיה עתידנית ליצירת פלטפורמה ייחודית.">
+  <meta name="keywords" content="Mudra, mudras for healing, hand mudras for meditation, gertrud hirschi mudras, טכנולוגיה רפואית">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '332c9f8c-b2d8-47f4-ba90-78eada1ee1bd',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/mudra-logo.webp" alt="Mudra" class="logo" />
+        </a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <button class="phone-header-btn" aria-label="התקשר אלינו">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">שירותים</a></li>
+        <li><a href="/about" class="active">אודות</a></li>
+      </ul>
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>הסיפור שלנו: מסע בין חוכמה עתיקה לטכנולוגיה עתידנית</h1>
+      <h3>איך הפכנו את mudras for healing לנגישות לכולם באמצעות חדשנות טכנולוגית</h3>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <h2>ההתחלה: חזון לעתיד בריא יותר</h2>
+        <p>Mudra נולדה מתוך שאלה פשוטה אך עמוקה: איך נוכל להפוך את הכוח המרפא של mudras for healing לנגיש לכל אדם, בכל מקום ובכל זמן? בעידן שבו הטכנולוגיה חודרת לכל תחום בחיינו, ראינו הזדמנות ייחודית לשלב בין החוכמה העתיקה של hand mudras for meditation לבין הכלים הדיגיטליים המתקדמים ביותר.</p>
+        <p>המייסדים שלנו, קבוצה של מהנדסי תוכנה חובבי טכנולוגיה, מומחי רפואה משלימה ומומחי נגישות, התאחדו סביב החזון הזה. כולנו חווינו בעצמנו את היתרונות של mudras for healing והבנו שהפוטנציאל שלהם רחב הרבה יותר ממה שמנוצל כיום.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2>הערכים המנחים אותנו</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>חדשנות מתמדת</h3>
+          <p>אנחנו מאמינים בשילוב של טכנולוגיות מתקדמות עם שיטות מסורתיות. הצוות שלנו עובד ללא הרף על פיתוח כלים חדשים המשפרים את חוויית הלמידה והתרגול של hand mudras for meditation.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h3>נגישות לכולם</h3>
+          <p>אנחנו מחויבים להפוך את mudras for healing לנגישות לכל אדם, ללא קשר ליכולות הפיזיות, הידע הקודם או המיקום הגיאוגרפי. הפלטפורמה שלנו מותאמת לאנשים עם מוגבלויות ותומכת במספר שפות.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h3>מבוסס מדע</h3>
+          <p>כל השיטות שלנו מבוססות על מחקר מדעי ועל עבודתה החלוצית של gertrud hirschi mudras. אנחנו משתפים פעולה עם מוסדות אקדמיים ומרפאות מובילות לאימות היעילות של הטכניקות שלנו.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>קהילה תומכת</h3>
+          <p>אנחנו בונים קהילה גלובלית של מתרגלים, מורים ומומחים המשתפים ידע, ניסיון ותמיכה. הקהילה שלנו היא לב פועם של הפלטפורמה ומקור השראה מתמיד.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <h2>המשימה שלנו: לשנות את עולם הבריאות הדיגיטלית</h2>
+        <p>המשימה שלנו ב-Mudra היא ברורה ומחייבת: להפוך את mudras for healing לחלק אינטגרלי מאורח החיים המודרני. אנחנו רוצים שכל אדם, בכל מקום בעולם, יוכל להפיק תועלת מהכוח המרפא של hand mudras for meditation בלחיצת כפתור.</p>
+        <p>אנחנו עובדים על פיתוח טכנולוגיות מתקדמות המשלבות בינוע מלאכותית, למידת מכונה ומציאות רבודה כדי ליצור חוויות למידה ותרגול אינטראקטיביות ומותאמות אישית. המטרה שלנו היא לא רק ללמד את הטכניקות, אלא ליצור שינוי אמיתי ומתמשך בחיי המשתמשים שלנו.</p>
+        <p>אנחנו גם מחויבים לקדם את המחקר המדעי בתחום mudras for healing ולשתף פעולה עם מוסדות בריאות מובילים ברחבי העולם. אנחנו מאמינים שהשילוב של חוכמה עתיקה, מדע מודרני וטכנולוגיה מתקדמת יכול ליצור מהפכה בעולם הרפואה המשלימה והנגישות.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>הצוות שמאחורי החזון</h2>
+      <p>הצוות שלנו מורכב ממומחים מובילים בתחומיהם - מפתחי תוכנה, מומחי UX/UI, מורים מוסמכים ל-gertrud hirschi mudras, רופאים ומומחי נגישות. כולנו חולקים את האמונה בכוח של mudras for healing ואת המחויבות להפוך אותם לנגישים לכולם.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>צוות הפיתוח</h3>
+          <p>מהנדסי תוכנה מנוסים המתמחים בפיתוח אפליקציות מובייל, AI ולמידת מכונה. הם אחראים על הטכנולוגיה המתקדמת שמאפשרת את חוויית המשתמש הייחודית שלנו.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3>צוות המומחים</h3>
+          <p>מורים מוסמכים ומומחים ב-hand mudras for meditation עם ניסיון של שנים בהוראה ובתרגול. הם אחראים על תוכן האימונים, הסדנאות והקורסים שלנו.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>צוות הבריאות</h3>
+          <p>רופאים, פיזיותרפיסטים ומומחי רפואה משלימה המייעצים לנו ומוודאים שהשיטות שלנו בטוחות, יעילות ומבוססות מדעית.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>צוות התמיכה</h3>
+          <p>מומחי שירות לקוחות ותמיכה טכנית הזמינים 24/7 לסייע למשתמשים שלנו ולוודא שהם מקבלים את החוויה הטובה ביותר.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievements-section">
+    <div class="container">
+      <h2>ההישגים שלנו עד כה</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-number">10,000+</div>
+          <p>משתמשים פעילים ברחבי העולם</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number">500+</div>
+          <p>וידאו הדרכה מקצועיים</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number">50+</div>
+          <p>ארגונים וחברות שותפים</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number">95%</div>
+          <p>שביעות רצון משתמשים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="future-section">
+    <div class="container">
+      <div class="future-content">
+        <h2>העתיד: לאן אנחנו הולכים</h2>
+        <p>אנחנו ממשיכים לחדש ולפתח. בשנים הקרובות נשיק תכונות חדשות כמו מציאות מדומה למדיטציה עמוקה, תכניות מותאמות אישית מבוססות AI, ושילוב עם מכשירים לביש למעקב בריאותי מתקדם.</p>
+        <p>אנחנו גם מתכננים להרחיב את הנוכחות הגלובלית שלנו ולהפוך את mudras for healing לזמינות ביותר שפות ותרבויות. החזון שלנו הוא שבעוד עשור, hand mudras for meditation יהיו חלק בלתי נפרד מאורח החיים הבריא של מיליוני אנשים ברחבי העולם.</p>
+        <p>אנחנו מזמינים אותך להצטרף אלינו למסע המרגש הזה ולהיות חלק מהמהפכה בעולם הבריאות הדיגיטלית.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>רוצים להיות חלק מהסיפור שלנו?</h2>
+      <p>צרו קשר עכשיו וגלו איך Mudra יכולה לשנות את חייכם</p>
+      <a href="/contact" class="btn-primary btn-large">צור קשר עכשיו</a>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Mudra. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '332c9f8c-b2d8-47f4-ba90-78eada1ee1bd';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
